@@ -15,6 +15,19 @@ html, body{
   font-family: 'Open Sans', sans-serif;
 }
 
+@mixin link-break {
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  -ms-word-break: break-all;
+  word-break: break-all;
+  word-break: break-word;
+  -ms-hyphens: auto;
+  -moz-hyphens: auto;
+  -webkit-hyphens: auto;
+  hyphens: auto;
+}
+
+
 #content{
   width: 98%;
   min-height: 90%;
@@ -30,6 +43,10 @@ html, body{
   background-color: $topbar-color;
   > div{
     margin-left: 100px;
+    overflow-x: auto;
+    position: relative;
+    overflow-y: hidden;
+    white-space:nowrap;
     @media screen and (max-width: $mobile-size) {
       margin-left: 0px;
     }
@@ -74,7 +91,7 @@ html, body{
   position: relative;
   margin-top: 20px;
   @media screen and (max-width: $mobile-size) {
-    width: auto;
+    width: 100%;
     display: block;
   }
 }
@@ -109,9 +126,19 @@ html, body{
 
 .project{
   text-align: left;
-  width: 600px;
+  width: 95%;
   margin: 10px;
   min-height: 200px;
   display: block;
   border-bottom: solid 1px black;
+}
+
+.projectTitle{
+  font-weight: bold;
+  font-size: 1.1em;
+  margin-bottom: 15px;
+}
+
+a{
+  @include link-break;
 }
