@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="styleat.css">
+    <title>Combinando Fórmulas</title>
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="header" style="width:100%; text-align:center;">
+        <p><h1>Combinando Fórmulas</h1></p>
+        <p class="text-paragraph">Para aumentar a capacidade de operações, é possível combinar fórmulas e cálculos.
+          Como já dito, o Microsoft Excel respeita uma ordem de operadores. Portanto, ao construir fórmulas onde
+          são combinadas fórmulas e operadores é necessário ficar atento ao uso de parênteses para que o resultado
+          apresentado seja o desejado.</p>
+          <p class="text-paragraph">Relembrando, a ordem dos operadores é: parênteses, exponenciação, multiplicação
+          e divisão, soma e subtração. No caso de serem utilizados dois operadores de mesma precedência, divisão e multiplicação
+          por exemplo, o Microsoft executará a fórmula da esquerda para a direita, resolvendo o operador que aparecer primeiro.</p>
+          <p class="text-paragraph">Abaixo alguns exemplos de fórmulas válidas:</p><br />
+        <div>
+        <table style="width:70%; margin-left:180px;">
+          <tr>
+            <th style="margin-right:5px;">Fórmula</th>
+            <th>Descrição</th>
+          </tr>
+          <tr>
+            <td style="border-right:1px solid black; width:200px;">=((soma(A1:A4))/4)</td>
+            <td>A fórmula soma os valores contidos nas células A1 até a A4 e depois divide por 4.</td>
+          </tr>
+          <tr>
+            <td style="border-right:1px solid black;">=(A1+A2+B1/2)</td>
+            <td>Esta fórmula divide o valor contido na célula B1 por 2 e soma o resultado da divisão ao conteúdo
+              das células A1 e A2.</td>
+          </tr>
+          <tr>
+            <td style="border-right:1px solid black;">=(soma(A5:A10)-B1)</td>
+            <td>Soma os valores contidos no intervalo A5 a A10 e subtrai do valor contido em B1.</td>
+          </tr>
+        </table>
+      </div><br />
+      </div>
+    </div>
+  </body>
+</html>

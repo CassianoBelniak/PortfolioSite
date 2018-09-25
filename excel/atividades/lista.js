@@ -1,0 +1,26 @@
+///atualize a lista de atividades aqui
+atividade = [
+["Bem vindo"],
+["Conceitos Básicos","A interface do Excel", "Operadores Matemáticos","Operadores Lógicos"],
+["Construção de fórmulas","Adição e Subtração","Multiplicação e Divisão","Combinando Fórmulas"],
+["Inserindo Bordas","Colorindo Fontes","Cores de Preenchimento"],
+["Alça de preenchimento"]
+]
+
+//numero de páginas em cada atividade -1
+atividadeMax = [
+  [0],
+  [0,0,0,0],
+  [0,0,0,0],
+  [0,0,0],
+  [4]
+]
+
+
+
+
+
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////

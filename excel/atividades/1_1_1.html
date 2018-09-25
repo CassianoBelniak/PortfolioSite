@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <script src="javascript.js"></script>
+    <link rel="stylesheet" type="text/css" href="styleat.css">
+    <title></title>
+  </head>
+  <body>
+    <script type="text/javascript">
+      initTable(5,5); //inicia a tabela (coluna, linha)
+      addTable(1,2,3); //adiciona valores
+      addTable(4,1,6);
+
+      addAnswer("=D1+D2");
+      addAnswer("=D2+D1");
+    </script>
+
+    <div id="tab">
+
+    </div>
+    <script type="text/javascript">
+      drawTable("tab");//desenha a tabele
+    </script>
+
+    <br><br>
+
+    <input type="text" name="" value="" id="form-test" onkeypress="testEquation()">
+  
+  </body>
+</html>

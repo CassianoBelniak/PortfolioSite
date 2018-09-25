@@ -1,0 +1,60 @@
+/*lista de estilos das caixas de informação*/
+
+/*caixa de informação*/
+.info-box{
+  background-image: url(imagens/info.png);
+  background-repeat: no-repeat;
+  background-position: bottom right;
+  background-size: 20px;
+  width: 250px;
+  background-color: #FFF;
+  border: 2px solid #3f51b5;
+  position: fixed;
+  border-radius: 5px;
+  box-shadow: 5px 5px 5px #888888;
+  padding: 10px;
+}
+
+.drag-box{
+  background-image: url(imagens/move.png);
+  background-repeat: no-repeat;
+  background-position: bottom right;
+  background-size: 20px;
+  width: 250px;
+  background-color: #FFF;
+  border: 2px solid #388e3c;
+  position: fixed;
+  border-radius: 5px;
+  box-shadow: 5px 5px 5px #888888;
+  padding: 10px;
+
+}
+
+.alert-box{
+  background-image: url(imagens/exclamation.jpg);
+  background-repeat: no-repeat;
+  background-position: bottom right;
+  background-size: 20px;
+  width: 250px;
+  background-color: #FFF;
+  border: 2px solid #d32f2f;
+  position: fixed;
+  border-radius: 5px;
+  box-shadow: 5px 5px 5px #888888;
+  padding: 10px;
+
+}
+
+
+
+
+#elem{
+      position: absolute;
+      background-color: green;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -o-user-select: none;
+      -ms-user-select: none;
+      -khtml-user-select: none;
+      user-select: none;
+  }
