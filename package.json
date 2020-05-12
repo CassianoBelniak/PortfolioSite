@@ -1,0 +1,36 @@
+{
+  "name": "portfolio",
+  "version": "1.0.0",
+  "description": "My portfolio site",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://gitlab.com/katuiche/portfolio.git"
+  },
+  "keywords": [
+    "portfolio",
+    "node",
+    "pug",
+    "sass",
+    "site"
+  ],
+  "author": "Cassiano Belniak",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://gitlab.com/katuiche/portfolio/issues"
+  },
+  "homepage": "https://gitlab.com/katuiche/portfolio#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "glob": "^7.1.6",
+    "node-sass": "^4.14.1",
+    "node-sass-middleware": "^0.11.0",
+    "pug": "^2.0.4"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.3"
+  }
+}
