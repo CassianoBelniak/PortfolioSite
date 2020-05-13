@@ -1,6 +1,34 @@
-html
-    head
-        title HI
-        link(rel="stylesheet", href="/style.css")
-    body
-        p test
+extends components/frameset.pug
+
+block content
+    .content
+        .content-card.full-sized.dark.shadow
+            +header
+        .content-card.full-sized.primary-dark.shadow
+            +academic-experience
+        .content-card.full-sized.light
+            +programation-languages
+
+mixin header
+    p hey
+
+mixin academic-experience
+    .academic-experience
+        h1 Experiência Acadêmica
+        .experiences
+            .experience-container
+                .icon
+                    i.fas.fa-desktop
+                .text
+                    p Análise em Desenvolvimento de Sistemas na UFPR
+                    p 2015 - 2018
+            .vertical-div.clear
+            .experience-container
+                .icon
+                    i.fas.fa-pencil-ruler
+                .text
+                    p Design Gráfico EAD na Cruzeiro do Sul
+                    p 2019 - cursando
+
+mixin programation-languages
+    p hey

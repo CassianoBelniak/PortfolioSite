@@ -1,0 +1,71 @@
+.content-card{
+    height: 500px;
+    padding: 20px;
+    box-sizing: border-box;
+    &.full-sized{
+        width: 100%;
+    };
+    &.clear{
+        background-color: $text-light;
+        color: $text-dark;
+    };
+    &.dark{
+        background-color: $text-dark;
+        color: $text-light;
+    }
+    &.primary-dark{
+        background-color: $primary-dark;
+        color: $text-light;
+    }
+    &.shadow{
+        -webkit-box-shadow: 5px 5px 5px 6px rgba(0,0,0,0.175);
+        -moz-box-shadow: 5px 5px 5px 6px rgba(0,0,0,0.175);
+        box-shadow: 5px 5px 5px 6px rgba(0,0,0,0.175);
+    }
+}
+ 
+.content{
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    margin: 0;
+    background-color: $text-light;
+    height: 100%;
+}
+
+
+.vertical-div{
+    width: 2px;
+    height: 100%;
+    &.clear{
+        background-color: $text-light;
+    }
+} 
+
+.academic-experience{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-flow: column nowrap;
+    text-align: center;
+    justify-content: center;
+    .experiences{
+        display: flex;
+        flex-flow: row nowrap;
+        .experience-container{
+            flex-grow: 1;
+            width: 100%;
+            display: flex;
+            flex-flow: column nowrap;     
+            .icon{
+                text-align: center;
+                i{
+                    font-size: 60px;
+                }
+            }
+            .text{
+                text-align: center;
+            }
+        }
+    }
+}

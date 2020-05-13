@@ -1,0 +1,13 @@
+@import "components/variables";
+@import "index";
+@import url('https://fonts.googleapis.com/css2?family=Muli&display=swap');
+
+body{
+    background-color: $text-dark;
+    font-family: 'Muli', sans-serif;
+    margin: 0;
+}
+
+::-webkit-scrollbar {
+    display: none;
+}
