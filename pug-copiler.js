@@ -10,12 +10,16 @@ async function make(){
         var relativePath = path.relative(path.join(__dirname, '/src'), file);
         var pos = relativePath.lastIndexOf(".");
         relativePath = relativePath.substr(0, pos < 0 ? relativePath.length : pos) + ".html";
+        var promise = new Promise(resolve=>{
         fs.writeFile(path.join(__dirname, '/public', relativePath), html, function(err) {
-            if(err) {
-                return console.log(err);
-            }
-            console.log("Generated " + relativePath + " file");
+                if(err) {
+                    return console.log(err);
+                }
+                console.log("Generated " + relativePath + " file");
+                resolve();
+            });
         });
+        await promise;
     }
 }
 

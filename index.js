@@ -7,9 +7,9 @@ const pugCopiler = require('./pug-copiler');
 
 const routes = require("./src/routes");
 
-express.static(path.join(__dirname, '/public'));
 app.set('views', path.join(__dirname, '/src'));
 app.set('view engine', 'pug');
+app.use(routes);
 
 app.use(
     sassMiddleware({
@@ -17,13 +17,14 @@ app.use(
         dest: __dirname + '/public', 
         debug: true
     })
-);
+    );
+    
+    app.get('*', async function (req, res, next) {
+        console.log('hi')
+        await pugCopiler();
+        next();
+    });
+    
+app.use(express.static('public'));
 
-app.get('*', async function (req, res, next) {
-    await pugCopiler();
-    next();
-});
-
-
-app.use(routes);
 app.listen(3000);
