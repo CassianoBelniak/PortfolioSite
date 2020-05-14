@@ -1,5 +1,7 @@
+$header-height: 50px;
+
 .content-card{
-    height: 500px;
+    min-height: 600px;
     padding: 20px;
     box-sizing: border-box;
     &.full-sized{
@@ -22,9 +24,38 @@
         -moz-box-shadow: 5px 5px 5px 6px rgba(0,0,0,0.175);
         box-shadow: 5px 5px 5px 6px rgba(0,0,0,0.175);
     }
+    &.no-padding{
+        padding: 0;
+    }
+}
+
+.header{
+    height: $header-height;
+    width: 100%;
+    background-color: $text-dark;
+    position: fixed;
+    z-index: 1;
+    -webkit-box-shadow: 5px 5px 5px 6px rgba(0,0,0,0.175);
+    -moz-box-shadow: 5px 5px 5px 6px rgba(0,0,0,0.175);
+    box-shadow: 5px 5px 5px 6px rgba(0,0,0,0.175);
+    display: flex;
+    justify-content: flex-end;
+    > * .nav-button{
+        color: $text-light;
+        height: 100%;
+        margin-right: 20px;
+    }
+}
+
+.topic{
+    width: 100%;
+    text-align: center;
 }
  
 .content{
+    position: relative;
+    top: $header-height;
+    margin-top: $header-height;
     display: flex;
     flex-flow: column;
     justify-content: center;
@@ -33,6 +64,17 @@
     height: 100%;
 }
 
+.project-container{
+    display: flex;
+    flex-flow: row nowrap;
+    align-content: stretch;
+    .description{
+        flex: 1;
+    }
+    .project-content{
+        width: 70%;
+    }
+}
 
 .vertical-div{
     width: 2px;
@@ -68,4 +110,137 @@
             }
         }
     }
+}
+
+.skillset-programing{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-flow: column nowrap;
+    text-align: center;
+    .skillsets{
+        justify-content: center;
+        display: flex;
+        flex-flow: row nowrap;
+        .skillset{
+            margin: 20px;
+            .icon{
+                font-size: 40px;
+            }
+        }
+    }
+}
+
+.skillset-artistic{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-flow: column nowrap;
+    text-align: center;
+    .skillsets{
+        justify-content: center;
+        display: flex;
+        flex-flow: row nowrap;
+        .skillset{
+            margin: 20px;
+            .icon{
+                font-size: 40px;
+            }
+        }
+    }
+}
+
+.ohgj-games{
+    display: flex;
+    flex-flow: row nowrap;
+    align-content: stretch;
+    height: 100%;
+    color: $text-light;
+    .games{
+        width: 70%;
+        padding: 20px;
+        height: fit-content;
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: flex-start;
+        > * .game-picture{
+            width: 100px;
+            height: 100px;
+        }
+        .game{
+            margin: 0;
+            width: 100px;
+            height: 100px;
+        }
+    }
+    .description{
+        height: 100%;
+        padding: 20px;
+        flex: 1;
+    };
+}
+
+.paradise{
+    .project-content{
+        display: flex;
+        justify-content: center;
+    }
+    > * .image{
+        height: 450px;
+    }
+}
+
+.robot{
+    .project-content{
+        display: flex;
+        justify-content: center;
+    }
+    > * .image{
+        height: 450px;
+    }
+}
+
+.isaw{
+    .project-content{
+        display: flex;
+        align-content: flex-end;
+        justify-content: flex-end;
+        flex-flow: row wrap;
+    }
+    > * .image{
+        margin: 5px;
+        width: 300px;
+    }
+}
+
+.paradise-background{
+    background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url("/images/paradise.jpg");
+    background-attachment: fixed;
+    background-position: bottom;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.isaw-background{
+    background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url("/images/isaw/isaw-index.png");
+    background-attachment: fixed;
+    background-position: top;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.tridimensional-background{
+    background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url("/images/robot-lineart.jpg");
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.ohgj-background{
+    background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url("/images/onehourgamejam.png");
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }

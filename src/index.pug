@@ -1,26 +1,49 @@
 extends components/frameset.pug
 
 block content
+    .header
+        +nav-button('perfil')
+            p perfil
+        +nav-button('experience')
+            p Academico
+        +nav-button('skillset-prog')
+            p Programação
+        +nav-button('skillset-art')
+            p Arte
     .content
-        .content-card.full-sized.dark.shadow
+        .content-card.full-sized.dark.shadow#perfil
             +header
-        .content-card.full-sized.primary-dark.shadow
+        .content-card.full-sized.primary-dark.shadow#experience
             +academic-experience
-        .content-card.full-sized.light
-            +programation-languages
+        .content-card.full-sized.light#skillset-prog
+            +skillset-programing
+        .content-card.full-sized.dark.shadow#skillset-art
+            +skillset-artistic
+        .content-card.full-sized.dark.shadow.no-padding.ohgj-background
+            +ohgj-games
+        .content-card.full-sized.primary-dark.shadow.isaw-background
+            +isaw
+        .content-card.full-sized.dark.shadow.paradise-background
+            +paradise
+        .content-card.full-sized.primary-dark.shadow.tridimensional-background
+            +robot
+        .content-card.full-sized.dark.shadow
+            p contato
 
 mixin header
-    p hey
+    p Olá
+    p Sou Cassiano Belniak
 
 mixin academic-experience
-    .academic-experience
+    .topic 
         h1 Experiência Acadêmica
+    .academic-experience
         .experiences
             .experience-container
                 .icon
                     i.fas.fa-desktop
                 .text
-                    p Análise em Desenvolvimento de Sistemas na UFPR
+                    p Análise e Desenvolvimento de Sistemas na UFPR
                     p 2015 - 2018
             .vertical-div.clear
             .experience-container
@@ -30,5 +53,106 @@ mixin academic-experience
                     p Design Gráfico EAD na Cruzeiro do Sul
                     p 2019 - cursando
 
-mixin programation-languages
-    p hey
+mixin skillset-programing
+    .topic 
+        h1 Competências em programação
+    .skillset-programing
+        .skillsets
+            .skillset
+                .icon.fab.fa-js
+                p JavaScript
+            .skillset
+                .icon.fab.fa-java
+                p Java
+            .skillset
+                .icon.fab.fa-sass
+                p Java
+            .skillset
+                .icon.fab.fa-python
+                p Java
+            .skillset
+                .icon.fab.fa-php
+                p Java
+
+mixin skillset-artistic
+    .topic 
+        h1 Competências em design
+    .skillset-artistic
+        .skillsets
+            .skillset
+                .icon.fab.fa-js
+                p JavaScript
+            .skillset
+                .icon.fab.fa-java
+                p Java
+            .skillset
+                .icon.fab.fa-sass
+                p Java
+            .skillset
+                .icon.fab.fa-python
+                p Java
+            .skillset
+                .icon.fab.fa-php
+                p Java
+
+mixin ohgj-games
+    .topic
+        h1 One Hour Game Jam
+    .ohgj-games
+        .games
+            +game("gleen", "")
+            +game("frog", "")
+            +game("", "")
+            +game("", "")
+            +game("ram", "")
+        .description
+            p this is a test
+
+mixin isaw
+    .topic 
+        h1 ISaw
+    .isaw
+        .project-container
+            .description
+                p Caratz
+            .project-content
+                img.image(src="/images/isaw/isaw-scrape.png")
+                img.image(src="/images/isaw/isaw-report.png")
+                img.image(src="/images/isaw/isaw-results.png")
+                img.image(src="/images/isaw/isaw-index.png")
+
+mixin paradise
+    .topic 
+        h1 Paraíso
+    .paradise
+        .project-container
+            .description
+                p Caratz
+            .project-content
+                img.image(src="/images/paradise.jpg")
+
+mixin robot
+    .topic 
+        h1 Desenho tridimensional
+    .robot
+        .project-container
+            .description
+                p Caratz
+            .project-content
+                img.image(src="/images/robot-color.jpg")
+                img.image(src="/images/robot-lineart.jpg")
+
+mixin nav-button(where)
+    a(href="#"+where)
+        .nav-button
+            block
+
+mixin game(iconName, link)
+    if iconName != ''
+        .game
+            a(href="/OneHourGameJam/"+link, target="_blank")
+                img.game-picture(src="/images/ohgj/" + iconName + ".png")
+    else
+        .game
+            
+                
