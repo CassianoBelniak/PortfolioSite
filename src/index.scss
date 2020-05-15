@@ -4,6 +4,7 @@ $header-height: 50px;
     min-height: 600px;
     padding: 20px;
     box-sizing: border-box;
+    overflow-x: auto;
     &.full-sized{
         width: 100%;
     };
@@ -27,6 +28,9 @@ $header-height: 50px;
     &.no-padding{
         padding: 0;
     }
+    &.short{
+        min-height: 300px;
+    }
 }
 
 .header{
@@ -44,6 +48,25 @@ $header-height: 50px;
         color: $text-light;
         height: 100%;
         margin-right: 20px;
+    }
+    .nav-button{
+        color: $text-light;
+        height: 100%;
+        margin-right: 20px;
+    }
+}
+
+.perfil{
+    width: 100%;
+    height: 560px;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    .perfil-center{
+        display: flex;
+        height: 100%;
+        flex-flow: column;
+        justify-content: center;
     }
 }
 
@@ -67,18 +90,18 @@ $header-height: 50px;
 .project-container{
     display: flex;
     flex-flow: row nowrap;
-    align-content: stretch;
+    justify-content: center;
     .description{
         flex: 1;
     }
     .project-content{
-        width: 70%;
+        flex: 1;
     }
 }
 
 .vertical-div{
     width: 2px;
-    height: 100%;
+    height: 400px;
     &.clear{
         background-color: $text-light;
     }
@@ -121,7 +144,7 @@ $header-height: 50px;
     .skillsets{
         justify-content: center;
         display: flex;
-        flex-flow: row nowrap;
+        flex-flow: row wrap;
         .skillset{
             margin: 20px;
             .icon{
@@ -135,7 +158,7 @@ $header-height: 50px;
     height: 100%;
     width: 100%;
     display: flex;
-    flex-flow: column nowrap;
+    flex-flow: column wrap;
     text-align: center;
     .skillsets{
         justify-content: center;
@@ -153,12 +176,12 @@ $header-height: 50px;
 .ohgj-games{
     display: flex;
     flex-flow: row nowrap;
-    align-content: stretch;
     height: 100%;
     color: $text-light;
+    justify-content: center;
     .games{
         position: relative;
-        width: 70%;
+        flex: 1;
         padding: 20px;
         height: fit-content;
         display: flex;
@@ -178,7 +201,7 @@ $header-height: 50px;
             transition: transform .2s;
             top: 0;
             left: 0;
-            :hover{
+            &:hover{
                 transform: scale(1.2);
                 z-index: 1;
             }        
@@ -207,7 +230,7 @@ $header-height: 50px;
         justify-content: center;
     }
     > * .image{
-        height: 450px;
+        height: 400px;
         margin: 5px;
     }
 }
@@ -223,6 +246,33 @@ $header-height: 50px;
         margin: 5px;
         width: 300px;
         height: auto;
+    }
+}
+
+.this-site{
+    width: 50%;
+}
+
+.contact{
+    text-align: right;
+}
+
+#projects-dropdown{
+    &:hover{
+        .projects-content{
+            position: absolute;
+            top: 50px;
+            display: block;
+            .nav-button{
+                background-color: $text-dark;
+                margin: 0;
+                height: 50px;
+                padding: 5px;
+            }
+        }
+    }
+    .projects-content{
+        display: none;
     }
 }
 
@@ -252,6 +302,14 @@ $header-height: 50px;
 
 .ohgj-background{
     background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url("/images/onehourgamejam.png");
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.header-background{
+    background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url("/images/header.png");
     background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;

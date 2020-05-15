@@ -2,7 +2,8 @@
 .content-card {
   min-height: 600px;
   padding: 20px;
-  box-sizing: border-box; }
+  box-sizing: border-box;
+  overflow-x: auto; }
   .content-card.full-sized {
     width: 100%; }
   .content-card.clear {
@@ -20,6 +21,8 @@
     box-shadow: 5px 5px 5px 6px rgba(0, 0, 0, 0.175); }
   .content-card.no-padding {
     padding: 0; }
+  .content-card.short {
+    min-height: 300px; }
 
 .header {
   height: 50px;
@@ -36,6 +39,22 @@
     color: #FFF8E8;
     height: 100%;
     margin-right: 20px; }
+  .header .nav-button {
+    color: #FFF8E8;
+    height: 100%;
+    margin-right: 20px; }
+
+.perfil {
+  width: 100%;
+  height: 560px;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center; }
+  .perfil .perfil-center {
+    display: flex;
+    height: 100%;
+    flex-flow: column;
+    justify-content: center; }
 
 .topic {
   width: 100%;
@@ -55,15 +74,15 @@
 .project-container {
   display: flex;
   flex-flow: row nowrap;
-  align-content: stretch; }
+  justify-content: center; }
   .project-container .description {
     flex: 1; }
   .project-container .project-content {
-    width: 70%; }
+    flex: 1; }
 
 .vertical-div {
   width: 2px;
-  height: 100%; }
+  height: 400px; }
   .vertical-div.clear {
     background-color: #FFF8E8; }
 
@@ -98,7 +117,7 @@
   .skillset-programing .skillsets {
     justify-content: center;
     display: flex;
-    flex-flow: row nowrap; }
+    flex-flow: row wrap; }
     .skillset-programing .skillsets .skillset {
       margin: 20px; }
       .skillset-programing .skillsets .skillset .icon {
@@ -108,7 +127,7 @@
   height: 100%;
   width: 100%;
   display: flex;
-  flex-flow: column nowrap;
+  flex-flow: column wrap;
   text-align: center; }
   .skillset-artistic .skillsets {
     justify-content: center;
@@ -122,12 +141,12 @@
 .ohgj-games {
   display: flex;
   flex-flow: row nowrap;
-  align-content: stretch;
   height: 100%;
-  color: #FFF8E8; }
+  color: #FFF8E8;
+  justify-content: center; }
   .ohgj-games .games {
     position: relative;
-    width: 70%;
+    flex: 1;
     padding: 20px;
     height: fit-content;
     display: flex;
@@ -146,7 +165,7 @@
       transition: transform .2s;
       top: 0;
       left: 0; }
-      .ohgj-games .games .game :hover {
+      .ohgj-games .games .game:hover {
         transform: scale(1.2);
         z-index: 1; }
   .ohgj-games .description {
@@ -166,7 +185,7 @@
   justify-content: center; }
 
 .robot > * .image {
-  height: 450px;
+  height: 400px;
   margin: 5px; }
 
 .isaw .project-content {
@@ -179,6 +198,25 @@
   margin: 5px;
   width: 300px;
   height: auto; }
+
+.this-site {
+  width: 50%; }
+
+.contact {
+  text-align: right; }
+
+#projects-dropdown:hover .projects-content {
+  position: absolute;
+  top: 50px;
+  display: block; }
+  #projects-dropdown:hover .projects-content .nav-button {
+    background-color: #242331;
+    margin: 0;
+    height: 50px;
+    padding: 5px; }
+
+#projects-dropdown .projects-content {
+  display: none; }
 
 .paradise-background {
   background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("/images/paradise.jpg");
@@ -208,16 +246,24 @@
   background-repeat: no-repeat;
   background-size: cover; }
 
+.header-background {
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("/images/header.png");
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover; }
+
 body {
   background-color: #242331;
   font-family: 'Muli', sans-serif;
-  margin: 0; }
+  margin: 0;
+  height: 100%;
+  width: 100%; }
 
 ::-webkit-scrollbar {
   display: none; }
 
 a {
-  color: inherit;
-  /* blue colors for links too */
+  color: #FDCA40;
   text-decoration: inherit;
   /* no underline */ }

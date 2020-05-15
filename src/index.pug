@@ -7,15 +7,30 @@ block content
     +modal
     .header
         +nav-button('perfil')
-            p perfil
+            p Perfil
         +nav-button('experience')
             p Acadêmico
         +nav-button('skillset-prog')
             p Programação
         +nav-button('skillset-art')
-            p Arte
+            p Design
+        .nav-button#projects-dropdown
+            p Projetos #[i.fas.fa-chevron-down]
+            .projects-content  
+                +nav-button('ohgj')
+                    p One Hour Game Jam
+                +nav-button('isaw')
+                    p ISaw
+                +nav-button('paradise')
+                    p Paraíso
+                +nav-button('robot')
+                    p Pontos de fuga
+                +nav-button('site')
+                    p O Site
+        +nav-button('contact')
+            p Contato
     .content
-        .content-card.full-sized.dark.shadow#perfil
+        .content-card.full-sized.dark.shadow#perfil.header-background
             +header
         .content-card.full-sized.primary-dark.shadow#experience
             +academic-experience
@@ -23,20 +38,25 @@ block content
             +skillset-programing
         .content-card.full-sized.dark.shadow#skillset-art
             +skillset-artistic
-        .content-card.full-sized.dark.shadow.no-padding.ohgj-background
+        .content-card.full-sized.dark.shadow.no-padding.ohgj-background#ohgj
             +ohgj-games
-        .content-card.full-sized.primary-dark.shadow.isaw-background
+        .content-card.full-sized.primary-dark.shadow.isaw-background#isaw
             +isaw
-        .content-card.full-sized.dark.shadow.paradise-background
+        .content-card.full-sized.dark.shadow.paradise-background#paradise
             +paradise
-        .content-card.full-sized.primary-dark.shadow.tridimensional-background
+        .content-card.full-sized.primary-dark.shadow.tridimensional-background#robot
             +robot
-        .content-card.full-sized.dark.shadow
-            p contato
+        .content-card.full-sized.primary-dark.shadow#site
+            +this-site
+        .content-card.full-sized.dark.shadow.short#contact
+            +contact
 
 mixin header
-    p Olá
-    p Sou Cassiano Belniak
+    .perfil
+        .perfil-center
+            .perfil-text
+                h1 Olá
+                h1 Sou Cassiano Belniak
 
 mixin academic-experience
     .topic 
@@ -66,17 +86,47 @@ mixin skillset-programing
                 .icon.fab.fa-js
                 p JavaScript
             .skillset
+                .icon.fab.fa-node-js
+                p NodeJs
+            .skillset
                 .icon.fab.fa-java
                 p Java
             .skillset
                 .icon.fab.fa-sass
-                p Java
+                p C#
+            .skillset
+                .icon.fab
+                p Godot
+            .skillset
+                .icon.fab
+                p GameMaker
             .skillset
                 .icon.fab.fa-python
-                p Java
+                p Python
             .skillset
                 .icon.fab.fa-php
-                p Java
+                p PHP
+            .skillset
+                .icon.fab.fa-git-alt
+                p Git
+            .skillset
+                .icon.fab.fa-sass
+                p Sass
+            .skillset
+                .icon.fab.fa-less
+                p Less
+            .skillset
+                .icon.fab
+                p Pug
+            .skillset
+                .icon.fab
+                p MongoDB
+            .skillset
+                .icon.fab
+                p Delphi
+            .skillset
+                .icon.fas.fa-database
+                p Mysql/Postgres/SqlServer/Oracle
 
 mixin skillset-artistic
     .topic 
@@ -84,54 +134,59 @@ mixin skillset-artistic
     .skillset-artistic
         .skillsets
             .skillset
-                .icon.fab.fa-js
-                p JavaScript
+                .icon.fab.fa-adobe
+                p Photoshop
             .skillset
-                .icon.fab.fa-java
-                p Java
+                .icon.fab
+                p Krita
             .skillset
-                .icon.fab.fa-sass
-                p Java
+                .icon.fab
+                p Gimp
             .skillset
-                .icon.fab.fa-python
-                p Java
+                .icon.fab
+                p Inkscape
             .skillset
-                .icon.fab.fa-php
-                p Java
+                .icon.fab
+                p Illustrator
+            .skillset
+                .icon.fab
+                p Asesprite
+            .skillset
+                .icon.fab
+                p Blender
+            .skillset
+                .icon.fab
+                p Skectup
 
 mixin ohgj-games
     .topic
         h1 One Hour Game Jam
     .ohgj-games
         .games
-            +game("gleen", "")
-            +game("frog", "")
+            +game("gleen", "return")
             +game("2p", "2p")
             +game("4elements", "4elements")
-            +game("charge", "")
-            +game("ram", "")
-            +game("darkness", "")
-            +game("dream", "")
-            +game("eletricity", "")
-            +game("fall", "")
-            +game("favorite", "")
-            +game("button", "")
-            +game("lava-ninja", "")
-            +game("magic", "")
-            +game("one-control", "")
-            +game("rain", "")
-            +game("ram", "")
-            +game("second-chance", "")
-            +game("spike", "")
-            +game("submarine", "")
-            +game("theft", "")
-            +game("train", "")
-            +game("walls", "")
-            +game("weapon", "")
+            +game("charge", "charge")
+            +game("dream", "dream")
+            +game("eletricity", "electricity")
+            +game("fall", "fall/1hgj_154.exe?")
+            +game("favorite", "favorite")
+            +game("lava-ninja", "breakable-object")
+            +game("magic", "magic/magic.exe?")
+            +game("one-control", "one-control")
+            +game("rain", "rain")
+            +game("ram", "ram")
+            +game("second-chance", "second-chance")
+            +game("spike", "brutal-roguelike")
+            +game("theft", "theft")
+            +game("walls", "wall")
+            +game("weapon", "weapon")
+            +game("10seconds", "10seconds")
         .description
-            p O #[a(href="http://onehourgamejam.com/") One Hour Game Jam] é um desafio semanal em que você precisa desenvolver um jogo completo (programação, arte, musica) em apenas uma hora.
+            p O #[a(href="http://onehourgamejam.com/", target="_blank") One Hour Game Jam] é um desafio semanal em que você precisa desenvolver um jogo completo (programação, arte, musica) em apenas uma hora.
             p Os jogos devem ser seguir um tema que é anunciado na hora da competição. A comunidade faz uma transmição ao vivo dos jogos sendo testados no final de cada sessão.
             p Não há um ranking por não ser uma competição.
+            p A maior parte desses jogos foi desenvolvida com o Game Maker
             p Essas são algumas das minhas entradas no site:
 
 mixin isaw
@@ -141,7 +196,8 @@ mixin isaw
         .project-container
             .description
                 p A LGPD (Lei Geral de Proteção de Dados Pessoais) é a nova lei brasileira de proteção de dados baseada na lei européia GDPRque passa a valer em 2021.
-                p Para o #[a(href="https://globallegalhackathon.com/") Global Legal Hackathon], nós desenvolvemos uma solução que permite verificar se o seu site se enquadra nas novas diretrizes da lei brasileira de proteção de dados. 
+                p Para o #[a(href="https://globallegalhackathon.com/", target="_blank") Global Legal Hackathon], nós desenvolvemos uma solução que permite verificar se o seu site se enquadra nas novas diretrizes da lei brasileira de proteção de dados. 
+                p O site foi desenvolvido utilizando Node, Pug, Sass e MySql.
                 p Aqui estão algumas telas do nosso site.
             .project-content
                 img.image.modal(src="/images/isaw/isaw-scrape.png")
@@ -154,21 +210,41 @@ mixin paradise
         h1 Paraíso
     .paradise
         .project-container
-            .description
-                p dsdsd
             .project-content
                 img.image.modal(src="/images/paradise.jpg")
+            .description
+                p O Paraíso foi um projeto desenvolvido para a faculdade de design. O objetivo era transformar uma foto comum de praia em um cartaz de um filme de suspense.
+                p Precisei aplicar alguns filtros para escurecer a imagem, remover algumas sombras, adicionar um novo fundo para substituir o céu limpo e adicionar um texto com o nome do suposto filme. Era necessário o uso da #[a(href="/images/original.jpg", target="_blank") imagem de praia disponível pelo professor]. 
+                p Montagem realizada no Krita.
 
 mixin robot
     .topic 
-        h1 Desenho tridimensional
+        h1 Robô tridimensional
     .robot
         .project-container
             .description
-                p Caratz
+                p Outro trabalho desenvolvido para a faculdade. Nessa atividade era necessário desenhar uma figura utilizando um ponto de fuga e colori-lo usando cores frias.
+                p Desenho feito a mão, imagem escaneada melhorada com o Krita e colorido no Inkscape.
             .project-content
                 img.image.modal(src="/images/robot.png")
                 img.image.modal(src="/images/robot-lineart.jpg")
+
+mixin this-site
+    .topic
+        h1 Este site
+    .this-site
+        p Este portfólio foi desenvolvido por mim a fim de demonstrar meu trabalho.
+        p O site foi programado em Pug, Sass e Node, mas o código no serviço de hospedagem está como puro html, css e javaScript.
+        p A conversão foi realizada por um programa que eu desenvolvi usando essas ferramentas. Não utilizei nenhum template.
+        p O código fonte desse site está disponível em #[a(href="https://gitlab.com/katuiche/portfolio", target="_blank") https://gitlab.com/katuiche/portfolio]
+
+mixin contact
+    .topic
+        h1 Contato
+    .contact
+        p cassi.belniak@gmail.com #[i.fas.fa-at]
+        p 41 9 9554-4249 #[i.fas.fa-phone]
+        p #[a(href="https://www.linkedin.com/in/cassiano-belniak-32bb04148/", target="_blank") Linkedin #[i.fab.fa-linkedin]]
 
 mixin nav-button(where)
     a(href="#"+where)
