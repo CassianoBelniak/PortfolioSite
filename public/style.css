@@ -126,6 +126,7 @@
   height: 100%;
   color: #FFF8E8; }
   .ohgj-games .games {
+    position: relative;
     width: 70%;
     padding: 20px;
     height: fit-content;
@@ -134,11 +135,20 @@
     justify-content: flex-start; }
     .ohgj-games .games > * .game-picture {
       width: 100px;
-      height: 100px; }
+      height: 100px;
+      position: relative; }
     .ohgj-games .games .game {
       margin: 0;
+      position: relative;
       width: 100px;
-      height: 100px; }
+      height: 100px;
+      z-index: 0;
+      transition: transform .2s;
+      top: 0;
+      left: 0; }
+      .ohgj-games .games .game :hover {
+        transform: scale(1.2);
+        z-index: 1; }
   .ohgj-games .description {
     height: 100%;
     padding: 20px;
@@ -156,7 +166,8 @@
   justify-content: center; }
 
 .robot > * .image {
-  height: 450px; }
+  height: 450px;
+  margin: 5px; }
 
 .isaw .project-content {
   display: flex;
