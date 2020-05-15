@@ -1,6 +1,10 @@
 extends components/frameset.pug
 
+block header
+    script(src="/modal.js")
+    link(rel="stylesheet", href="/modal.css")
 block content
+    +modal
     .header
         +nav-button('perfil')
             p perfil
@@ -140,10 +144,10 @@ mixin isaw
                 p Para o #[a(href="https://globallegalhackathon.com/") Global Legal Hackathon], nós desenvolvemos uma solução que permite verificar se o seu site se enquadra nas novas diretrizes da lei brasileira de proteção de dados. 
                 p Aqui estão algumas telas do nosso site.
             .project-content
-                img.image(src="/images/isaw/isaw-scrape.png")
-                img.image(src="/images/isaw/isaw-report.png")
-                img.image(src="/images/isaw/isaw-results.png")
-                img.image(src="/images/isaw/isaw-index.png")
+                img.image.modal(src="/images/isaw/isaw-scrape.png")
+                img.image.modal(src="/images/isaw/isaw-report.png")
+                img.image.modal(src="/images/isaw/isaw-results.png")
+                img.image.modal(src="/images/isaw/isaw-index.png")
 
 mixin paradise
     .topic 
@@ -153,7 +157,7 @@ mixin paradise
             .description
                 p dsdsd
             .project-content
-                img.image(src="/images/paradise.jpg")
+                img.image.modal(src="/images/paradise.jpg")
 
 mixin robot
     .topic 
@@ -163,8 +167,8 @@ mixin robot
             .description
                 p Caratz
             .project-content
-                img.image(src="/images/robot.png")
-                img.image(src="/images/robot-lineart.jpg")
+                img.image.modal(src="/images/robot.png")
+                img.image.modal(src="/images/robot-lineart.jpg")
 
 mixin nav-button(where)
     a(href="#"+where)
@@ -179,4 +183,8 @@ mixin game(iconName, link)
     else
         .game
             
-                
+mixin modal
+    .modal-container#modal-container
+        span.close &times
+        img.modal-content#modal-img
+        #caption
