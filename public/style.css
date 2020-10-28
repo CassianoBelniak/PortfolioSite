@@ -81,6 +81,7 @@
     flex: 1; }
 
 .vertical-div {
+  color: green;
   width: 2px;
   height: 400px; }
   .vertical-div.clear {
